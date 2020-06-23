@@ -1,0 +1,71 @@
+﻿@model IEnumerable<栗子音乐.Models.Singer>
+@{
+    ViewBag.Title = "artists";
+    Layout = "~/Views/Shared/_muban.cshtml";
+}
+
+
+
+<!-- partial:partials/_header.html -->
+<!-- partial -->
+<div class="container-fluid relative animatedParent animateOnce">
+    <div class="animated fadeInUpShort p-md-5 p-3">
+        <div class="relative mb-5">
+            <h1 class="mb-2 text-primary">歌手</h1>
+            <p>
+                在这里，<br />
+                您可以看到本站所有歌手
+            </p>
+        </div>
+        <div class="lightSlider mb-5" data-pager="false" data-item="26" data-item-lg="13" data-item-md="13"
+             data-item-sm="6">
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">A</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">B</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">C</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">D</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">E</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">F</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">G</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">H</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">I</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">J</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">K</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">L</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">M</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">N</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">O</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">P</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">Q</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">R</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">S</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">T</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">U</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">V</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">W</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">X</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">Y</a></div>
+            <div><a href="javascript::" class="btn btn-outline-primary btn btn-sm r-5">Z</a></div>
+        </div>
+        <br>
+        <div class="avatar avatar-md mb-5 primary-color"><span></span>全</div>
+        <div class="avatar avatar-md mb-5 primary-color"><span></span>部</div>
+        <div class="avatar avatar-md mb-5 primary-color"><span></span>歌</div>
+        <div class="avatar avatar-md mb-5 primary-color"><span></span>手</div>
+        <div class="row mb-5">
+            @foreach (var item in Model)
+            {
+            <div class="col-md-4 mb-3" style="height:80px;">
+                <figure class="avatar avatar-md float-left mr-3 mt-1">
+                    <a href="/Record/Artists_single?Singer_ID=@item.Singer_ID" class="Singer_onclick" title="@item.Singer_ID"><img src="~/https://cdn.lizixs.top/img/demo/@item.Singer_Img" alt=""></a>
+                </figure>
+                <div>
+                    <a href="/Record/Artists_single?Singer_ID=@item.Singer_ID" title="@item.Singer_ID" class="Singer_onclick"><h5>@item.Singer_Name</h5></a>
+                    @item.Singer_area
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- partial:partials/_foot.html -->
+<!-- partial -->

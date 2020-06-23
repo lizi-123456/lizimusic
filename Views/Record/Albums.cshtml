@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "albums";
+    Layout = "~/Views/Shared/_muban.cshtml";
+}
+
+<!-- partial:partials/_header.html -->
+<!-- partial -->
+
+<div class="container-fluid relative animatedParent animateOnce">
+    <div class="animated fadeInUpShort p-5 ml-lg-5 mr-lg-5">
+        <section>
+            <div class="relative mb-5">
+                <h1 class="mb-2 text-primary">合辑</h1>
+                <p>
+                    在这，
+                    <br />
+                    您可以看到本站所有合辑
+                </p>
+            </div>
+            <div class="row has-items-overlay">
+
+
+                @foreach (var item in ViewData["Albums"] as List<栗子音乐.Models.Albums>)
+                { 
+                <div class="col-lg-3 col-md-4 col-sm-6 my-2">
+                    <figure>
+                        <div class="img-wrapper">
+                            <img src="https://cdn.lizixs.top/img/demo/@item.Albums_img" alt="/">
+                            <div class="img-overlay text-white text-center">
+                                <a href="/Record/Album_single?Albums_ID=@item.Albums_ID">
+                                    <div class="figcaption mt-3">
+                                        <i class="icon-link s-48"></i>
+                                        <h5 class="mt-5">@item.Albums_Name</h5>
+                                        <span>@item.Albums_player</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="figure-title text-center p-2">
+                                <h5>@item.Albums_Name</h5>
+                                <span>@item.Albums_player</span>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+                }
+                </div>
+        </section>
+    </div>
+</div>
+
+<!-- partial:partials/_foot.html -->
+<!-- partial -->

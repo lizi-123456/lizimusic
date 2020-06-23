@@ -1,0 +1,137 @@
+﻿
+@{
+    ViewBag.Title = "album_single";
+    Layout = "~/Views/Shared/_muban.cshtml";
+}
+    <script>
+        $(document).ready(function () {
+            if (location.href.indexOf("#reloaded") == -1) {
+                location.href = location.href + "#reloaded";
+                location.reload(false);
+            }
+        })
+    </script>
+<!-- partial:partials/_header.html -->
+<!-- partial -->
+<div class="container-fluid relative animatedParent animateOnce p-0">
+    <div class="animated fadeInUpShort">
+        <!--Banner-->
+        <section class="relative" data-bg-possition="center"
+                 style="background-image:url('https://cdn.lizixs.top/img/demo/b3.jpg');">
+            <div class="has-bottom-gradient">
+                @foreach (var item in ViewData["Albums_xq"] as List<栗子音乐.Models.Albums>)
+                {
+                <div class="row pt-5 ml-lg-5 mr-lg-5">
+                    <div class="col-md-10 offset-1">
+                        <div class="row my-5 pt-5">
+                            <div class="col-md-3">
+                                <img src="https://cdn.lizixs.top/img/demo/@item.Albums_img" alt="/">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="d-md-flex align-items-center justify-content-between">
+                                    <h1 class="my-3 text-white ">@item.Albums_Name</h1>
+                                    <div class="ml-auto mb-2">
+                                        <a href="#" class="snackbar" data-text="Bookmark clicked"
+                                           data-pos="top-right"
+                                           data-showAction="true"
+                                           data-actionText="ok"
+                                           data-actionTextColor="#fff"
+                                           data-backgroundColor="#0c101b"><i class="icon-bookmark s-24"></i></a>
+                                        <a href="#" class="snackbar ml-3" data-text="You like this song"
+                                           data-pos="top-right"
+                                           data-showAction="true"
+                                           data-actionText="ok"
+                                           data-actionTextColor="#fff"
+                                           data-backgroundColor="#0c101b"><i class="icon-heart s-24"></i></a>
+                                        <a href="#" class="snackbar ml-3" data-text="Thanks for sharing"
+                                           data-pos="top-right"
+                                           data-showAction="true"
+                                           data-actionText="ok"
+                                           data-actionTextColor="#fff"
+                                           data-backgroundColor="#0c101b"><i class="icon-share-1 s-24"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="text-white my-2">
+                                    <p style="font-size:20px;">
+                                        合辑详情
+                                    </p>
+                                </div>
+                                <div class="pt-3">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+                </div>
+            <div class="bottom-gradient "></div>
+        </section>
+        <!--@@Banner-->
+
+        <div class="p-3 p-lg-5">
+            <!--New Releases-->
+            <section>
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="playlist">
+                                    <ul class="list-group">
+                                        <li class="list-group-item my-1">
+                                            <div class="d-flex align-items-center">
+                                                <div class="col-1">
+                                                    <a class="no-ajaxy media-url" href="javascript:(0)">
+                                                    </a>
+                                                </div>
+                                                <div class="col-6">
+                                                    <h6>歌曲</h6>
+                                                </div>
+                                                <span class=" ml-auto">歌手</span>
+                                                <a href="javascript:(0)" class="ml-auto">分享</a>
+                                                <div class="ml-auto">
+                                                    <a href="javascript:(0)">
+                                                        播放
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        @foreach (var item in ViewData["Albums_music"] as List<栗子音乐.Models.sel_music_singer_Albums_all_Result>)
+                                        {
+                                            <li class="list-group-item my-1">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="col-1">
+                                                        <a class="no-ajaxy media-url Music_Play_Count" title="@item.Music_ID"  href="~/media/@item.Music_Url">
+                                                            <i class="icon-play s-28"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <h6>@item.Music_Name</h6>
+                                                    </div>
+                                                    <span class=" ml-auto">@item.Singer_Name</span>
+                                                    <a href="#" class="ml-auto"><i class="icon-share-1"></i></a>
+                                                    <div class="ml-auto">
+                                                        <a href="~/media/@item.Music_Url"  title="@item.Music_ID"  class="no-ajaxy media-url btn btn-outline-primary btn-sm d-none d-lg-block Music_Play_Count">
+                                                            播放
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        }
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--@@New Releases-->
+        </div>
+
+    </div>
+</div>
+<!-- partial:partials/_foot.html -->
+<!-- partial -->
