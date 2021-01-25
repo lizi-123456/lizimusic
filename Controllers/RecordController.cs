@@ -17,6 +17,7 @@ namespace 栗子音乐.Controllers
         //主页，用于数据展示
         public ActionResult Index()
         {
+
             //合辑数据展示
             ViewData["Albums"] = sf.Albums.ToList();
             //合辑的前六条数据
