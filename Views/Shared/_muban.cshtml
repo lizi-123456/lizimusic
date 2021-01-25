@@ -16,13 +16,14 @@
         body {
             cursor: url(http://wosn.net/zhizhen/normal.cur),default;
         }
+
         a:hover {
             cursor: url(http://wosn.net/zhizhen/link.cur),pointer;
         }
+
         .btn:hover {
             cursor: url(http://wosn.net/zhizhen/link.cur),pointer;
         }
-        
     </style>
 
 </head>
@@ -239,7 +240,7 @@
                         @foreach (var item in ViewData["music"] as List<栗子音乐.Models.sel_music_singer_Albums_all_Result>)
                         {
                             <li class="list-group-item my-1">
-                                <a class="no-ajaxy media-url Music_Play_Count bofangyinyue" title="@item.Music_ID" href="http://cdn.lizixs.top/music/@item.Music_Url" data-wave="https://cdn.lizixs.top/music/track2.json">
+                                <a class="no-ajaxy media-url Music_Play_Count bofangyinyue" title="@item.Music_ID" href="https://cdn.lizixs.top/music/@item.Music_Url" data-wave="https://cdn.lizixs.top/music/track2.json">
                                     <!-- 指定峰值 -->
                                     <div class="d-flex justify-content-between align-items-center">
                                         <i class="icon-play s-28"></i>

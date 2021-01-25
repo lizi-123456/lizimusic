@@ -10,6 +10,8 @@ namespace 栗子音乐.Controllers
     public class BaseController : Controller
     {
 
+        
+
         public shuifengEntities1 sf = new shuifengEntities1();
         public BaseController()
         {

@@ -354,6 +354,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="HtmlPage1.html" />
     <Content Include="link.cur" />
     <Content Include="media\track1.mp3" />
     <Content Include="media\track2.mp3" />
